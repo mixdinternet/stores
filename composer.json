@@ -1,0 +1,23 @@
+{
+    "name": "mixdinternet/stores",
+    "description": "Gerenciador de lojas com opção de mapa",
+    "keywords": ["laravel", "stores", "lojas", "maps"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Irineu Martins Junior",
+            "email": "irineu@mixd.com.br",
+            "homepage": "http://www.mixd.com.br/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mixdinternet\\Stores\\": "src/"
+        }
+    }
+}
