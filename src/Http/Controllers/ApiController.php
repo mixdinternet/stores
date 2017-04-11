@@ -9,9 +9,9 @@ class ApiController extends Controller
 {
     public function index($type = null)
     {
-        $content = 'var stores = ' . cache()->remember('api.stores.index-' . $type, 60, function () use ($type){
-                $query = Store::active()->select('name', 'zipcode', 'address', 'phone', 'latitude', 'longitude', 'description', 'state', 'city');
-                if($type) {
+        $content = 'var stores = ' . cache()->remember('api.stores.index-' . $type, 60, function () use ($type) {
+                $query = Store::active()->select('type', 'name', 'zipcode', 'address', 'phone', 'latitude', 'longitude', 'description', 'state', 'city');
+                if ($type) {
                     $query->where('type', $type);
                 }
 
