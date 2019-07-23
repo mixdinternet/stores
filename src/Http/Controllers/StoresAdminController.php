@@ -25,12 +25,17 @@ class StoresAdminController extends AdmixController
         $search['zipcode'] = $request->input('zipcode', '');
         $search['address'] = $request->input('address', '');
         $search['type'] = $request->input('type', '');
+        $search['city'] = $request->input('city', '');
+        $search['state'] = $request->input('state', '');
 
         ($search['address']) ? $query->where('address', 'LIKE', '%' . $search['address'] . '%') : '';
         ($search['name']) ? $query->where('name', 'LIKE', '%' . $search['name'] . '%') : '';
         ($search['status']) ? $query->where('status', $search['status']) : '';
         ($search['zipcode']) ? $query->where('zipcode', $search['zipcode']) : '';
         ($search['type']) ? $query->where('type', $search['type']) : '';
+        ($search['city']) ? $query->where('city', $search['city']) : '';
+        ($search['state']) ? $query->where('state', $search['state']) : '';
+
 
         $stores = $query->paginate(50);
 

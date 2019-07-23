@@ -39,6 +39,12 @@
         <div class="col-md-3">
             {!! BootForm::text('address', 'Endereço') !!}
         </div>
+        <div class="col-md-3">
+            {!! BootForm::text('city', 'Cidade') !!}
+        </div>
+        <div class="col-md-3">
+            {!! BootForm::text('state', 'Estado') !!}
+        </div>
     </div>
 
     @if(count(config('mstores.types')) > 1)
