@@ -33,8 +33,8 @@ class StoresAdminController extends AdmixController
         ($search['status']) ? $query->where('status', $search['status']) : '';
         ($search['zipcode']) ? $query->where('zipcode', $search['zipcode']) : '';
         ($search['type']) ? $query->where('type', $search['type']) : '';
-        ($search['city']) ? $query->where('city', $search['city']) : '';
-        ($search['state']) ? $query->where('state', $search['state']) : '';
+        ($search['city']) ? $query->where('city', 'LIKE', '%' . $search['city'] . '%') : '';
+        ($search['state']) ? $query->where('state', 'LIKE', '%' . $search['state'] . '%') : '';
 
 
         $stores = $query->paginate(50);
